@@ -1,0 +1,20 @@
+<div class="grid">
+    <div class="col-12 align-items-center justify-content-center flex-column flex mt-2">
+        <form [formGroup]="updateCustomerForm" class="flex flex-column align-items-center justify-content-center mt-5 border-1 border-round p-5">
+            <h2 class="form-title">Post New Customer</h2>
+            <div class="p-inputgroup mt-2 ">
+                <span class="p-inputgroup-addon w-4" for="name">Name: </span>
+                <input class="w-full" type="text" pInputText id="name" name="name" required formControlName="name">
+            </div>
+            <div class="p-inputgroup mt-4  ">
+                <span class="p-inputgroup-addon w-4" for="email">Email: </span>
+                <input class="w-full" type="text" pInputText id="email" name="email" required formControlName="email">
+            </div>
+            <div class="p-inputgroup mt-4 ">
+                <span class="p-inputgroup-addon w-4" for="phone">Phone: </span>
+                <input class="w-full" type="text" pInputText id="phone" name="phone" required formControlName="phone">
+            </div>
+            <button type="submit" (click)="updateCustomer()" pButton pRipple label="Update" class="mt-5 p-button-success"></button>
+        </form>
+    </div>
+</div>

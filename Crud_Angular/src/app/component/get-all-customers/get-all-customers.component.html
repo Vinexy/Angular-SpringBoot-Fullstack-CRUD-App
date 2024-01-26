@@ -1,0 +1,28 @@
+<div class="grid flex flex-row  ">
+<div class="col-3  flex flex-column">
+    <p-button class="m-5" routerLink="/customer">Post New Customer</p-button>
+</div>
+<div class="col-9 mt-5 flex flex-column justify-content-center align-items-center">
+    <p-table [value]="customers" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-customer>
+            <tr>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.phone }}</td>
+                <td>
+                    <p-button class="" routerLink="/customer/{{customer.id}}">Update</p-button>
+                    <p-button severity="danger" class="" (onClick)="deleteCustomer(customer.id)">Delete</p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+</div>
